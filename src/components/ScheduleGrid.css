@@ -1,0 +1,279 @@
+.schedule-container {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.schedule-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.schedule-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.stat-icon {
+  font-size: 1rem;
+}
+
+.stat-icon.success {
+  color: var(--success);
+}
+
+.stat-icon.error {
+  color: var(--danger);
+}
+
+.success-text {
+  color: var(--success);
+}
+
+.error-text {
+  color: var(--danger);
+}
+
+.errors-panel {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.errors-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--danger);
+  margin-bottom: 12px;
+}
+
+.errors-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.errors-list li {
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  padding-left: 16px;
+  position: relative;
+}
+
+.errors-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--danger);
+}
+
+.more-errors {
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 12px 16px;
+  background: var(--gray-100);
+  border-radius: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--gray-700);
+}
+
+.legend-color {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule-chunk {
+  margin-bottom: 24px;
+}
+
+.chunk-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  margin-bottom: 8px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.schedule-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: max-content;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 8px;
+  text-align: center;
+  font-size: 0.8125rem;
+  min-width: 36px;
+}
+
+.schedule-table th {
+  background: var(--gray-100);
+  font-weight: 600;
+  color: var(--gray-600);
+  border-bottom: 2px solid var(--gray-300);
+}
+
+.supervisor-header {
+  position: sticky;
+  left: 0;
+  background: var(--gray-100);
+  z-index: 1;
+}
+
+.supervisor-label {
+  position: sticky;
+  left: 0;
+  background: white;
+  font-weight: 600;
+  color: var(--secondary);
+  border-right: 1px solid var(--gray-200);
+  z-index: 1;
+}
+
+.day-header {
+  border-bottom: 2px solid var(--gray-300);
+}
+
+.schedule-cell {
+  font-weight: 600;
+  border: 1px solid var(--gray-200);
+  transition: transform 0.1s;
+}
+
+.schedule-cell:hover {
+  transform: scale(1.1);
+  z-index: 2;
+  position: relative;
+}
+
+.schedule-cell.has-error {
+  box-shadow: inset 0 0 0 2px var(--danger);
+}
+
+/* Estados con colores solidos */
+.state-subida {
+  background: #3498db;
+  color: white;
+}
+
+.state-induccion {
+  background: #f39c12;
+  color: white;
+}
+
+.state-perforacion {
+  background: #27ae60;
+  color: white;
+}
+
+.state-bajada {
+  background: #e74c3c;
+  color: white;
+}
+
+.state-descanso {
+  background: #95a5a6;
+  color: white;
+}
+
+.state-empty {
+  background: var(--gray-100);
+  color: var(--gray-400);
+}
+
+/* Fila de conteo */
+.drilling-row td {
+  border-top: 2px solid var(--gray-300);
+}
+
+.drilling-count {
+  font-weight: 700;
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+
+.drilling-count.count-ok {
+  background: #d4edda;
+  color: #155724;
+}
+
+.drilling-count.count-error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.drilling-count.count-warning {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .schedule-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .legend {
+    gap: 12px;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 6px;
+    min-width: 32px;
+    font-size: 0.75rem;
+  }
+}

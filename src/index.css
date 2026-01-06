@@ -1,0 +1,45 @@
+:root {
+  --primary: #16a085;
+  --primary-dark: #0e7c67;
+  --primary-light: #1abc9c;
+  --secondary: #2c3e50;
+  --danger: #e74c3c;
+  --warning: #f39c12;
+  --success: #27ae60;
+  --info: #3498db;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Urbanist', sans-serif;
+  background-color: var(--gray-100);
+  color: var(--gray-800);
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+button {
+  font-family: 'Urbanist', sans-serif;
+}
+
+input, select {
+  font-family: 'Urbanist', sans-serif;
+}
